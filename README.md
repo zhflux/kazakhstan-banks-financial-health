@@ -1,14 +1,26 @@
-# kazakhstan-banks-financial-health
-Financial health analysis of Kazakhstan second-tier banks
+# Financial Health Analysis of Kazakhstan Banks
+
+## Project Overview
+This project analyzes the financial health of Kazakhstan's second-tier banks using publicly available financial data from the National Bank of Kazakhstan (NBK).
 
 ## Current Status
-
 - [x] Project structure created
-- [x] Data source identified
+- [x] Data source identified (NBK)
 - [x] Raw NBK Excel files added (2023-2026)
 - [x] Data loading and cleaning notebook
 - [x] Financial ratios calculated (ROA, ROE, LDR, EAR)
 - [x] Financial Health Score completed
 - [x] SQL analysis queries added
-- [x] Dashboard completed (Streamlit)
-- [ ] Final report completed
+- [x] Streamlit dashboard completed
+- [x] Final report completed
+
+## Tools Used
+Python, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook, PostgreSQL, Streamlit
+
+## Key Findings
+- Shinhan Bank: fastest growth +478% (2023-2026)
+- Kaspi Bank: most profitable (ROA 7.1%)
+- Bereke Bank & VTB: losses in 2023, recovered by 2024
+
+## Data Source
+National Bank of Kazakhstan: https://nationalbank.kz/en/news/banks-performance
