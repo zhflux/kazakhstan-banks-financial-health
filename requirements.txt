@@ -6,3 +6,5 @@ openpyxl
 jupyter
 streamlit
 psycopg2-binary
+scikit-learn
+xlrd
