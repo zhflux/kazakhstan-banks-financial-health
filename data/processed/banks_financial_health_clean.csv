@@ -1,0 +1,118 @@
+number,bank_name,assets,year
+1.0,"""Halyk Bank of Kazakhstan"", JSC",13862789955.0,2023
+2.0,"""Kaspi Bank"", JSC",5086784318.0,2023
+3.0,"""Bank CenterCredit"", JSC",4346622613.0,2023
+4.0,"""Otbasy bank"", JSC",3440104965.0,2023
+5.0,"""ForteBank"", JSC",2914126826.0,2023
+6.0,"""First Heartland Jusan Bank"", JSC ",2843661507.0,2023
+7.0,"""Eurasian Bank"", JSC",2360045578.0,2023
+8.0,"""Bank RBK"" Bank"", JSC",1984418179.0,2023
+9.0,"""Bereke Bank"", JSC",1694922688.0,2023
+10.0,"""Citibank Kazakhstan"", JSC ",1334705356.0,2023
+11.0,"""Bank Freedom Finance Kazakhstan"", JSC",1264198200.0,2023
+12.0,"""Altyn Bank"", JSC (SB of China Citic Bank Corporation Limited)",981451106.0,2023
+13.0,"""Home Credit Bank"", Joint Stock Company",551954564.0,2023
+14.0,"Subsidiary Bank ""Bank of China in Kazakhstan"", JSC",550684248.0,2023
+15.0,"""Nurbank"", JSC",468758948.0,2023
+16.0,"""Industrial and Commercial Bank of China in Almaty"", JSC",290361506.0,2023
+17.0,"Subsidiary JSC ""Bank VTB (Kazakhstan)"" ",192889251.0,2023
+18.0,"SB ""KAZAKHSTAN-ZIRAAT INTERNATIONAL BANK"", JSC",171056372.0,2023
+19.0,"""Shinhan Bank Kazakhstan"", JSC",126385913.0,2023
+20.0,"""Al-Hilal"" Islamic Bank"", JSC",60315857.0,2023
+21.0,"""Islamic bank ""Zaman-Bank"", JSC",36090236.0,2023
+,Total:,44562328187.0,2023
+1.0,"The information was prepared on the basis of unconsolidated statements submitted by second-tier banks. Starting from the data as of November 1, 2021, the indicators are formed in accordance with the PPNBRK dated 04/26/2021 No. 48 ""On Amendments to the Resolution of the Board of the National Bank of the Republic of Kazakhstan dated 04/21/2020 No. 54 ""On Approval of the List, Forms, Deadlines for Reporting by second-tier banks and the Rules for its submission"" and PPNBRK dated 12/28/2018. No. 313 ""On Approval of the List, Forms, Terms and Rules of Reporting on Loans and Contingent Liabilities by Second-tier Banks, Branches of Non-Resident Banks of the Republic of Kazakhstan, Joint-Stock Company ""Development Bank of Kazakhstan"" and Organizations Engaged in Certain Types of Banking operations""",,2023
+2.0,"Loans include accounts for the group of accounts 1300 ""Loans granted to other banks"", 1400 ""Customer requirements"", 1460 ""Repo transactions with securities"", excluding adjustment accounts (accounts 1310, 1311, 1430, 1431), discount and premium accounts (accounts 1312, 1313, 1432, 1433, 1434, 1435) and accounts of provisions (accounts 1319, 1428, 1463)",,2023
+3.0,"Loans for which there is overdue debt on the main debt and (or) accrued remuneration. Starting from the data as of January 1, 2023, the available overdue debt is presented in three ranges: over 7 days, over 30 days and over 90 days",,2023
+4.0,"The amount of overdue loans (including overdue remuneration) reflected in the corresponding balance sheet accounts (1306,1309,1409,1421,1423,1424,1427,1462,1731,1741)",,2023
+, ,,2023
+, ,,2023
+1.0,"""Halyk Bank of Kazakhstan"", JSC",14943264219.0,2024
+2.0,"""Kaspi Bank"", JSC",6688923342.0,2024
+3.0,"""Bank CenterCredit"", JSC",5260803086.0,2024
+4.0,"""Otbasy bank"", JSC",3996033887.0,2024
+5.0,"""ForteBank"", JSC",3444410186.0,2024
+6.0,"""First Heartland Jusan Bank"", JSC ",2869282945.0,2024
+7.0,"""Eurasian Bank"", JSC",2758772279.0,2024
+8.0,"""Freedom Bank Kazakhstan"", JSC",2210863836.0,2024
+9.0,"""Bereke Bank"" JSC",2076026637.0,2024
+10.0,"""Bank RBK"" Bank"", JSC",2043613069.0,2024
+11.0,"""Citibank Kazakhstan"", JSC ",1087021374.0,2024
+12.0,"""Altyn Bank"", JSC (SB of China Citic Bank Corporation Limited)",888696926.0,2024
+13.0," ""Home Credit Bank"", Joint Stock Company",802996035.0,2024
+14.0,"""Shinhan Bank Kazakhstan"", JSC",475116057.0,2024
+15.0,"""Nurbank"", JSC",465708253.0,2024
+16.0,"Subsidiary Bank ""Bank of China in Kazakhstan"", JSC",416647689.0,2024
+17.0,"""Industrial and Commercial Bank of China in Almaty"", JSC",349496322.0,2024
+18.0,"SB ""KAZAKHSTAN-ZIRAAT INTERNATIONAL BANK"", JSC",233011213.0,2024
+19.0,"Subsidiary JSC ""Bank VTB (Kazakhstan)"" ",227312981.0,2024
+20.0,"""Al-Hilal"" Islamic Bank"", JSC",177999121.0,2024
+21.0,"""Islamic bank ""Zaman-Bank"", JSC",25097803.0,2024
+,Total:,51441097261.0,2024
+1.0,"The information was prepared on the basis of unconsolidated statements submitted by second-tier banks. Starting from the data as of November 1, 2021, the indicators are formed in accordance with the PPNBRK dated 04/26/2021 No. 48 ""On Amendments to the Resolution of the Board of the National Bank of the Republic of Kazakhstan dated 04/21/2020 No. 54 ""On Approval of the List, Forms, Deadlines for Reporting by second-tier banks and the Rules for its submission"" and PPNBRK dated 12/28/2018. No. 313 ""On Approval of the List, Forms, Terms and Rules of Reporting on Loans and Contingent Liabilities by Second-tier Banks, Branches of Non-Resident Banks of the Republic of Kazakhstan, Joint-Stock Company ""Development Bank of Kazakhstan"" and Organizations Engaged in Certain Types of Banking operations""",,2024
+2.0,"Loans include accounts for the group of accounts 1300 ""Loans granted to other banks"", 1400 ""Customer requirements"", 1460 ""Repo transactions with securities"", excluding adjustment accounts (accounts 1310, 1311, 1430, 1431), discount and premium accounts (accounts 1312, 1313, 1432, 1433, 1434, 1435) and accounts of provisions (accounts 1319, 1428, 1463)",,2024
+3.0,"Loans for which there is overdue debt on the main debt and (or) accrued remuneration. Starting from the data as of January 1, 2023, the available overdue debt is presented in three ranges: over 7 days, over 30 days and over 90 days",,2024
+4.0,"The amount of overdue loans (including overdue remuneration) reflected in the corresponding balance sheet accounts (1306,1309,1409,1421,1423,1424,1427,1462,1731,1741)",,2024
+, ,,2024
+, ,,2024
+1.0,"""Halyk Bank of Kazakhstan"", JSC",17941741778.0,2025
+2.0,"""Kaspi Bank"", JSC",8189804623.0,2025
+3.0,"""Bank CenterCredit"", JSC",7030812467.0,2025
+4.0,"""Otbasy bank"", JSC",4279614316.0,2025
+5.0,"""ForteBank"", JSC",4112145508.0,2025
+6.0,"""First Heartland Jusan Bank"", JSC ",3326262915.0,2025
+7.0,"""Eurasian Bank"", JSC",3142702412.0,2025
+8.0,"""Freedom Bank Kazakhstan"", JSC",2547968765.0,2025
+9.0,"""Bank RBK"" Bank"", JSC",2452692704.0,2025
+10.0,"""Bereke Bank"" JSC",2445232022.0,2025
+11.0,"""Citibank Kazakhstan"", JSC ",1174475453.0,2025
+12.0," ""Home Credit Bank"", Joint Stock Company",1036276926.0,2025
+13.0,"""Altyn Bank"", JSC (SB of China Citic Bank Corporation Limited)",1002473946.0,2025
+14.0,"""Shinhan Bank Kazakhstan"", JSC",676124209.0,2025
+15.0,"""Nurbank"", JSC",533793102.0,2025
+16.0,"Subsidiary Bank ""Bank of China in Kazakhstan"", JSC",477094455.0,2025
+17.0,"""Industrial and Commercial Bank of China in Almaty"", JSC",358221019.0,2025
+18.0,"SB ""KAZAKHSTAN-ZIRAAT INTERNATIONAL BANK"", JSC",295840718.0,2025
+19.0,"Subsidiary JSC ""Bank VTB (Kazakhstan)"" ",244400004.0,2025
+20.0,"""ADCB"" Islamic Bank"", JSC",239724519.0,2025
+21.0,"""Islamic bank ""Zaman-Bank"", JSC",52017533.0,2025
+,Total:,61559419394.0,2025
+1.0,"The information was prepared on the basis of unconsolidated statements submitted by second-tier banks. Starting from the data as of November 1, 2021, the indicators are formed in accordance with the PPNBRK dated 04/26/2021 No. 48 ""On Amendments to the Resolution of the Board of the National Bank of the Republic of Kazakhstan dated 04/21/2020 No. 54 ""On Approval of the List, Forms, Deadlines for Reporting by second-tier banks and the Rules for its submission"" and PPNBRK dated 12/28/2018. No. 313 ""On Approval of the List, Forms, Terms and Rules of Reporting on Loans and Contingent Liabilities by Second-tier Banks, Branches of Non-Resident Banks of the Republic of Kazakhstan, Joint-Stock Company ""Development Bank of Kazakhstan"" and Organizations Engaged in Certain Types of Banking operations""",,2025
+2.0,"Loans include accounts for the group of accounts 1300 ""Loans granted to other banks"", 1400 ""Customer requirements"", 1460 ""Repo transactions with securities"", excluding adjustment accounts (accounts 1310, 1311, 1430, 1431), discount and premium accounts (accounts 1312, 1313, 1432, 1433, 1434, 1435) and accounts of provisions (accounts 1319, 1428, 1463)",,2025
+3.0,"Loans for which there is overdue debt on the main debt and (or) accrued remuneration. Starting from the data as of January 1, 2023, the available overdue debt is presented in three ranges: over 7 days, over 30 days and over 90 days",,2025
+4.0,"Stage 3 includes loans for which events have been identified that serve as objective evidence of impairment:                                                                                                                       - Significant financial difficulties of the borrower, including expected financial difficulties;                                                                                                                                                             - Breach of contract tems; - Forced loan restructuring;                                                                                                                                                                                                                                              - Misuse of loan funds for purpose other than intended;                                                                                                                                                                                                                                         - Other events determined by the bank's (provision reserve) cdlculation methodology.                                                                                                                                                                ACCI - a purchased or originatd financial aset with evidence of impairment at the time of initial recognition.",,2025
+5.0,"The amount of overdue loans (including overdue remuneration) reflected in the corresponding balance sheet accounts (1306,1309,1409,1421,1423,1424,1427,1462,1731,1741)",,2025
+6.0,"Provisions for the loan portfolio have been formed in accordance with the requirements of the International financial Reporting Standards, the Rules for the formation of provisions under IFRS, and the requirements of the legislation of the Republic of Kazakhstan on accouning and financial reporting, as approved by Resolution N269 of the Board of the National Bank of the Republic of Kazakhstan dated 22.12.2017, for the purpose of covering expected and incurred credit losses on financial assets.",,2025
+, ,,2025
+, ,,2025
+1.0,"""Halyk Bank of Kazakhstan"", JSC",20269148985.0,2026
+2.0,"""Kaspi Bank"", JSC",9484289736.0,2026
+3.0,"""Bank CenterCredit"", JSC",8571447512.0,2026
+4.0,"""Otbasy bank"", JSC",5200361015.0,2026
+5.0,"""ForteBank"", JSC",5171612588.0,2026
+6.0,"""Alatau City Bank"", JSC ",3351695235.0,2026
+7.0,"""Eurasian Bank"", JSC",3026705170.0,2026
+8.0,"""Bereke Bank"" JSC (SB of Lesha Bank LLC (Public))",2798005998.0,2026
+9.0,"""Bank RBK"" Bank"", JSC",2727035219.0,2026
+10.0,"""Freedom Bank Kazakhstan"", JSC",2589541185.0,2026
+11.0,"""Altyn Bank"", JSC (SB of China Citic Bank Corporation Limited)",1332565667.0,2026
+12.0," ""Home Credit Bank"", Joint Stock Company",1265943242.0,2026
+13.0,"""Citibank Kazakhstan"", JSC ",1190217157.0,2026
+14.0,"""Shinhan Bank Kazakhstan"", JSC",730977941.0,2026
+15.0,"""Industrial and Commercial Bank of China in Almaty"", JSC",616891721.0,2026
+16.0,"Subsidiary Bank ""Bank of China in Kazakhstan"", JSC",579961425.0,2026
+17.0,"""Nurbank"", JSC",564331948.0,2026
+18.0,"""KMF Bank"", JSC",404560975.0,2026
+19.0,"SB ""KAZAKHSTAN-ZIRAAT INTERNATIONAL BANK"", JSC",307038224.0,2026
+20.0,"Subsidiary JSC ""Bank VTB (Kazakhstan)"" ",266974504.0,2026
+21.0,"""ADCB"" Islamic Bank"", JSC",256180252.0,2026
+22.0,"""Islamic bank ""Zaman-Bank"", JSC",44956899.0,2026
+23.0,"""BNK Commercial Bank"" JSC",23340202.0,2026
+,Total:,70773782800.0,2026
+1.0,"The information has been prepared on the basis of unconsolidated statements submitted by second-tier banks in accordance with the RB of the NBRK dated 12/02/2025. No. 88 ""On Approval of the reporting Rules for second-tier banks, branches of non-resident banks of the Republic of Kazakhstan, Joint-Stock Company ""Development Bank of Kazakhstan"" and the RB of the NBRK dated 12/24/2025. No. 103 "" On Approval of the Rules for reporting loans and contingent liabilities by second-tier banks, branches of non-resident banks of the Republic of Kazakhstan, Joint-Stock Company ""Development Bank of Kazakhstan"" and organizations engaged in certain types of banking operations"".",,2026
+2.0,"Loans include accounts for the group of accounts 1300 ""Loans granted to other banks"", 1400 ""Customer requirements"", 1460 ""Repo transactions with securities"", excluding adjustment accounts (accounts 1310, 1311, 1430, 1431), discount and premium accounts (accounts 1312, 1313, 1432, 1433, 1434, 1435) and accounts of provisions (accounts 1319, 1428, 1463)",,2026
+3.0,"Loans for which there is overdue debt on the main debt and (or) accrued remuneration. Starting from the data as of January 1, 2023, the available overdue debt is presented in three ranges: over 7 days, over 30 days and over 90 days",,2026
+4.0,"Stage 3 includes loans for which events have been identified that serve as objective evidence of impairment:                                                                                                                       - Significant financial difficulties of the borrower, including expected financial difficulties;                                                                                                                                                             - Breach of contract tems; - Forced loan restructuring;                                                                                                                                                                                                                                              - Misuse of loan funds for purpose other than intended;                                                                                                                                                                                                                                         - Other events determined by the bank's (provision reserve) cdlculation methodology.                                                                                                                                                                ACCI - a purchased or originatd financial aset with evidence of impairment at the time of initial recognition.",,2026
+5.0,"The amount of overdue loans (including overdue remuneration) reflected in the corresponding balance sheet accounts (1306,1309,1409,1421,1423,1424,1427,1462,1731,1741)",,2026
+6.0,"Provisions for the loan portfolio have been formed in accordance with the requirements of the International financial Reporting Standards, the Rules for the formation of provisions under IFRS, and the requirements of the legislation of the Republic of Kazakhstan on accouning and financial reporting, as approved by Resolution N269 of the Board of the National Bank of the Republic of Kazakhstan dated 22.12.2017, for the purpose of covering expected and incurred credit losses on financial assets.",,2026
+, ,,2026
