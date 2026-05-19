@@ -24,3 +24,9 @@ Python, Pandas, NumPy, Matplotlib, Seaborn, Jupyter Notebook, PostgreSQL, Stream
 
 ## Data Source
 National Bank of Kazakhstan: https://nationalbank.kz/en/news/banks-performance
+
+## Dashboard Preview
+
+![Dashboard](reports/screenshot_1.png)
+![ROA Chart](reports/screenshot_2.png)
+![Health Score](reports/screenshot_3.png)
