@@ -1,5 +1,8 @@
 # Financial Health Analysis of Kazakhstan Banks
 
+## Live Demo
+👉 [Open Dashboard](https://kazakhstan-banks-financial-health-nzbooan9upudnqtbntwwan.streamlit.app/)
+
 ## Project Overview
 This project analyzes the financial health of Kazakhstan's second-tier banks using publicly available financial data from the National Bank of Kazakhstan (NBK).
 
@@ -65,6 +68,20 @@ National Bank of Kazakhstan: https://nationalbank.kz/en/news/banks-performance
 ![Dashboard](reports/screenshot_1.png)
 ![ROA Chart](reports/screenshot_2.png)
 ![Health Score](reports/screenshot_3.png)
+
+## Data Flow
+
+```mermaid
+flowchart TD
+    A[NBK Website] -->|Download XLS| B[data/raw/]
+    B -->|01_data_loading_and_cleaning.ipynb| C[banks_financial_health_clean.csv]
+    C -->|02_financial_ratios.ipynb| D[banks_with_ratios.csv]
+    D -->|03_health_score.ipynb| E[banks_health_score.csv]
+    D -->|sql/create_tables.sql| F[(PostgreSQL)]
+    D --> G[dashboard/app.py]
+    E --> G
+    G -->|Streamlit Cloud| H[Live Dashboard]
+```
 
 ## How to Run
 
