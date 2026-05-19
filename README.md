@@ -1,5 +1,7 @@
 # Financial Health Analysis of Kazakhstan Banks
 
+![CI](https://github.com/zhflux/kazakhstan-banks-financial-health/actions/workflows/ci.yml/badge.svg)
+
 ## Live Demo
 👉 [Open Dashboard](https://kazakhstan-banks-financial-health-nzbooan9upudnqtbntwwan.streamlit.app/)
 
