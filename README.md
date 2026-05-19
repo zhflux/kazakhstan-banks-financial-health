@@ -30,3 +30,41 @@ National Bank of Kazakhstan: https://nationalbank.kz/en/news/banks-performance
 ![Dashboard](reports/screenshot_1.png)
 ![ROA Chart](reports/screenshot_2.png)
 ![Health Score](reports/screenshot_3.png)
+
+## How to Run
+
+1. Clone the repository:
+```bash
+git clone https://github.com/zhflux/kazakhstan-banks-financial-health.git
+cd kazakhstan-banks-financial-health
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Download NBK Excel files from:
+
+https://nationalbank.kz/en/news/banks-performance
+
+Put them in `data/raw/` named as `nbk_2023_capital_assets.xls` etc.
+
+4. Run notebooks in order:
+```bash
+notebooks/01_data_loading_and_cleaning.ipynb
+notebooks/02_financial_ratios.ipynb
+notebooks/03_health_score.ipynb
+```
+
+5. Run the dashboard:
+```bash
+cd dashboard
+streamlit run app.py
+```
+
+6. (Optional) Load data into PostgreSQL:
+```bash
+psql -d kazakhstan_banks -f sql/create_tables.sql
+psql -d kazakhstan_banks -c "\copy banks(...) FROM 'data/processed/banks_with_ratios.csv' CSV HEADER"
+```

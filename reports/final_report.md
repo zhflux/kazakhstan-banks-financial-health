@@ -1,4 +1,30 @@
 # Financial Health Analysis of Kazakhstan Banks
+
+## Financial Health Score Methodology
+
+The score is calculated as a weighted average of 4 normalized metrics:
+
+| Metric | Weight | Description |
+|--------|--------|-------------|
+| ROA | 35% | Return on Assets — profitability relative to total assets |
+| ROE | 35% | Return on Equity — profitability relative to equity |
+| LDR | 15% | Loan-to-Deposit Ratio — closer to 1.0 is optimal |
+| EAR | 15% | Equity-to-Assets Ratio — capital strength |
+
+### Normalization
+- ROA, ROE, EAR: Min-Max scaling to [0, 1]
+- LDR: `1 - abs(LDR - 1) / max(LDR)` — penalizes deviation from 1.0
+
+### Final Formula
+Health Score = ROA_norm × 0.35 + ROE_norm × 0.35 + LDR_score × 0.15 + EAR_norm × 0.15
+
+### Categories
+| Score | Category |
+|-------|----------|
+| 0.0 — 0.35 | 🔴 Weak |
+| 0.35 — 0.60 | 🟡 Moderate |
+| 0.60 — 1.00 | 🟢 Strong |
+
 ## Final Report
 
 ### Key Findings
