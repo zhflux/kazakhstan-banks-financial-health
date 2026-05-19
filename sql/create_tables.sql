@@ -1,16 +1,16 @@
 CREATE TABLE IF NOT EXISTS banks (
     id SERIAL PRIMARY KEY,
-    number FLOAT,
+    number NUMERIC,
     bank_name TEXT,
-    assets FLOAT,
-    loans FLOAT,
-    liabilities FLOAT,
-    deposits FLOAT,
-    equity FLOAT,
-    net_income FLOAT,
+    assets NUMERIC,
+    loans NUMERIC,
+    liabilities NUMERIC,
+    deposits NUMERIC,
+    equity NUMERIC,
+    net_income NUMERIC,
     year INT,
-    ROA FLOAT,
-    ROE FLOAT,
-    LDR FLOAT,
-    EAR FLOAT
+    ROA NUMERIC,
+    ROE NUMERIC,
+    LDR NUMERIC,
+    EAR NUMERIC
 );

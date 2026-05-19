@@ -8,13 +8,15 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data", "processed")
 
-# Загрузка данных
-df = pd.read_csv(os.path.join(DATA_DIR, "banks_with_ratios.csv"))
-df_score = pd.read_csv(os.path.join(DATA_DIR, "banks_health_score.csv"))
+@st.cache_data
+def load_data():
+    df = pd.read_csv(os.path.join(DATA_DIR, "banks_with_ratios.csv"))
+    df_score = pd.read_csv(os.path.join(DATA_DIR, "banks_health_score.csv"))
+    df["bank_name"] = df["bank_name"].str.replace('"', '').str.strip()
+    df_score["bank_name"] = df_score["bank_name"].str.replace('"', '').str.strip()
+    return df, df_score
 
-# Очищаем названия
-df["bank_name"] = df["bank_name"].str.replace('"', '').str.strip()
-df_score["bank_name"] = df_score["bank_name"].str.replace('"', '').str.strip()
+df, df_score = load_data()
 
 # Заголовок
 st.title("Financial Health of Kazakhstan Banks")
