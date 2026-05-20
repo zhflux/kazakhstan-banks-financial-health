@@ -37,11 +37,11 @@ def missing_data_report(df, output_path="data/processed/missing_report.csv"):
         "column": df.columns,
         "missing_count": df.isnull().sum().values,
         "missing_pct": (df.isnull().sum() / len(df) * 100).round(2).values,
-        "dtype": df.dtypes.values
+        "dtype": df.dtypes.astype(str).values
     })
-    report = report[report["missing_count"] > 0].sort_values("missing_pct", ascending=False)
     report.to_csv(output_path, index=False)
-    print(f"Missing data report saved: {len(report)} columns with missing values")
+    missing = report[report["missing_count"] > 0]
+    print(f"Missing data report saved: {len(missing)} columns with missing values")
     return report
 
 

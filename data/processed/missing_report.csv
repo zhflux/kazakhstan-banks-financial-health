@@ -1,1 +1,14 @@
 column,missing_count,missing_pct,dtype
+number,0,0.0,float64
+bank_name,0,0.0,str
+assets,0,0.0,float64
+loans,0,0.0,float64
+liabilities,0,0.0,float64
+deposits,0,0.0,float64
+equity,0,0.0,float64
+net_income,0,0.0,float64
+year,0,0.0,int64
+ROA,0,0.0,float64
+ROE,0,0.0,float64
+LDR,0,0.0,float64
+EAR,0,0.0,float64
