@@ -37,6 +37,10 @@ def run():
 
     logger.info("done")
 
+    from src.validation import run_all_validations
+    logger.info("validating data")
+    run_all_validations(df)
+
 
 if __name__ == "__main__":
     run()

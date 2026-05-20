@@ -27,7 +27,8 @@ page = st.sidebar.selectbox("Page", [
     "Risk Analysis",
     "Health Score Explorer",
     "Time Series",
-    "Advanced Analysis"
+    "Advanced Analysis",
+    "Data Quality"
 ])
 
 # ── PAGE 1 ──────────────────────────────────────────────────────────────────
@@ -255,3 +256,45 @@ elif page == "Advanced Analysis":
         plt.suptitle("Asset Growth Forecast")
         plt.tight_layout()
         st.pyplot(fig5)
+
+elif page == "Data Quality":
+    st.title("Data Quality Report")
+
+    from scipy import stats
+
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Total rows", len(df))
+    col2.metric("Banks", df["bank_name"].nunique())
+    col3.metric("Years covered", df["year"].nunique())
+
+    st.subheader("Missing Values")
+    missing = pd.DataFrame({
+        "column": df.columns,
+        "missing": df.isnull().sum().values,
+        "pct": (df.isnull().sum() / len(df) * 100).round(2).values
+    })
+    missing = missing[missing["missing"] > 0]
+    if missing.empty:
+        st.success("No missing values found")
+    else:
+        st.dataframe(missing)
+
+    st.subheader("Financial Consistency (assets ≈ liabilities + equity)")
+    df_check = df.copy()
+    df_check["reconstructed"] = df_check["liabilities"] + df_check["equity"]
+    df_check["diff_pct"] = (abs(df_check["assets"] - df_check["reconstructed"]) / df_check["assets"] * 100).round(2)
+    violations = df_check[df_check["diff_pct"] > 15][["bank_name", "year", "assets", "reconstructed", "diff_pct"]]
+    st.warning(f"{len(violations)} rows with inconsistency > 15%")
+    st.dataframe(violations.reset_index(drop=True))
+
+    st.subheader("Ratio Sanity Check")
+    checks = {
+        "ROA < 1": int((df["ROA"] < 1).sum()),
+        "EAR between 0 and 1": int(((df["EAR"] >= 0) & (df["EAR"] <= 1)).sum()),
+        "Assets > 0": int((df["assets"] > 0).sum()),
+    }
+    for check, count in checks.items():
+        if count == len(df):
+            st.success(f"{check}: ✅ all {count} rows pass")
+        else:
+            st.error(f"{check}: ❌ only {count}/{len(df)} rows pass")
