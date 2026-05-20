@@ -1,0 +1,19 @@
+weights:
+  roa: 0.35
+  roe: 0.35
+  ldr: 0.15
+  ear: 0.15
+
+thresholds:
+  weak: 0.35
+  moderate: 0.60
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+
+files:
+  2023: nbk_2023_capital_assets.xls
+  2024: nbk_2024_capital_assets.xls
+  2025: nbk_2025_capital_assets.xls
+  2026: nbk_2026_capital_assets.xls
