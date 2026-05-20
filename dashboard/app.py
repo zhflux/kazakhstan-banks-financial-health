@@ -63,6 +63,31 @@ if page == "Executive Overview":
     ax2.set_ylabel("Avg ROA")
     st.pyplot(fig2)
 
+    st.subheader("Key Interpretations")
+
+    st.info("""
+    **Halyk Bank** dominates by assets but trails smaller peers in ROA (3.9% vs Kaspi's 7.1%).
+    Scale does not translate into proportional profitability — a pattern common in universal banks
+    where loan book growth outpaces margin improvement.
+    """)
+
+    st.warning("""
+    **Shinhan Bank** grew 478% between 2023–2026. Rapid balance sheet expansion unsupported
+    by proportional capital growth may increase exposure to liquidity and credit risk.
+    """)
+
+    st.error("""
+    **Sector-wide:** No bank reached Strong category (Health Score > 0.60). Average EAR of ~11%
+    suggests limited capital buffers. In a credit deterioration scenario, banks with EAR below 8%
+    face meaningful solvency pressure.
+    """)
+
+    st.success("""
+    **Bereke Bank** recovered from ROA -7.6% in 2023 to positive territory by 2024.
+    However, its ranking remains volatile under Monte Carlo simulation — reflecting genuine
+    analytical uncertainty.
+    """)
+
 # ── PAGE 2 ──────────────────────────────────────────────────────────────────
 elif page == "Bank Comparison":
     st.title("Bank Comparison")
@@ -298,3 +323,5 @@ elif page == "Data Quality":
             st.success(f"{check}: ✅ all {count} rows pass")
         else:
             st.error(f"{check}: ❌ only {count}/{len(df)} rows pass")
+
+
