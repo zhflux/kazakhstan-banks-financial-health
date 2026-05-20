@@ -26,7 +26,8 @@ page = st.sidebar.selectbox("Page", [
     "Bank Comparison",
     "Risk Analysis",
     "Health Score Explorer",
-    "Time Series"
+    "Time Series",
+    "Advanced Analysis"
 ])
 
 # ── PAGE 1 ──────────────────────────────────────────────────────────────────
@@ -146,3 +147,37 @@ elif page == "Time Series":
         ax.plot(df_b["year"], df_b[metric], marker="o", color="#2196F3")
         ax.set_title(f"{metric} — {bank}")
         st.pyplot(fig)
+
+# ── PAGE 6 ──────────────────────────────────────────────────────────────────
+elif page == "Advanced Analysis":
+    st.title("Advanced Analysis")
+
+    st.subheader("Correlation Matrix")
+    df_corr = df[df["LDR"] < 10].copy()
+    df_corr = df_corr[df_corr["ROE"] < 10]
+    corr = df_corr[["ROA", "ROE", "LDR", "EAR", "assets", "net_income"]].corr()
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", center=0, ax=ax)
+    st.pyplot(fig)
+
+    st.subheader("Bank Segments (KMeans)")
+    year = st.selectbox("Year", sorted(df["year"].unique(), reverse=True))
+    df_c = df[df["year"] == year][["bank_name", "ROA", "ROE", "LDR", "EAR"]].dropna()
+    df_c = df_c[df_c["ROE"] < 100]
+    df_c = df_c[df_c["LDR"] < 100]
+    from sklearn.preprocessing import StandardScaler
+    from sklearn.cluster import KMeans
+    scaler = StandardScaler()
+    X = scaler.fit_transform(df_c[["ROA", "ROE", "LDR", "EAR"]])
+    df_c["segment"] = KMeans(n_clusters=3, random_state=42).fit_predict(X)
+    df_c["segment"] = df_c["segment"].map({0: "Stable", 1: "Aggressive", 2: "Risky"})
+    fig2, ax2 = plt.subplots(figsize=(10, 6))
+    colors = {"Stable": "#4CAF50", "Aggressive": "#2196F3", "Risky": "#f44336"}
+    for seg, group in df_c.groupby("segment"):
+        ax2.scatter(group["ROA"], group["ROE"], label=seg, color=colors[seg], s=100)
+        for _, row in group.iterrows():
+            ax2.annotate(row["bank_name"][:15], (row["ROA"], row["ROE"]), fontsize=7)
+    ax2.set_xlabel("ROA")
+    ax2.set_ylabel("ROE")
+    ax2.legend()
+    st.pyplot(fig2)
