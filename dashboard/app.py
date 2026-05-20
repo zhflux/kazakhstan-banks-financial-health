@@ -152,32 +152,106 @@ elif page == "Time Series":
 elif page == "Advanced Analysis":
     st.title("Advanced Analysis")
 
-    st.subheader("Correlation Matrix")
-    df_corr = df[df["LDR"] < 10].copy()
-    df_corr = df_corr[df_corr["ROE"] < 10]
-    corr = df_corr[["ROA", "ROE", "LDR", "EAR", "assets", "net_income"]].corr()
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", center=0, ax=ax)
-    st.pyplot(fig)
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
+        "Correlation", "Clustering", "Sensitivity", "Outliers", "Forecasting"
+    ])
 
-    st.subheader("Bank Segments (KMeans)")
-    year = st.selectbox("Year", sorted(df["year"].unique(), reverse=True))
-    df_c = df[df["year"] == year][["bank_name", "ROA", "ROE", "LDR", "EAR"]].dropna()
-    df_c = df_c[df_c["ROE"] < 100]
-    df_c = df_c[df_c["LDR"] < 100]
-    from sklearn.preprocessing import StandardScaler
-    from sklearn.cluster import KMeans
-    scaler = StandardScaler()
-    X = scaler.fit_transform(df_c[["ROA", "ROE", "LDR", "EAR"]])
-    df_c["segment"] = KMeans(n_clusters=3, random_state=42).fit_predict(X)
-    df_c["segment"] = df_c["segment"].map({0: "Stable", 1: "Aggressive", 2: "Risky"})
-    fig2, ax2 = plt.subplots(figsize=(10, 6))
-    colors = {"Stable": "#4CAF50", "Aggressive": "#2196F3", "Risky": "#f44336"}
-    for seg, group in df_c.groupby("segment"):
-        ax2.scatter(group["ROA"], group["ROE"], label=seg, color=colors[seg], s=100)
-        for _, row in group.iterrows():
-            ax2.annotate(row["bank_name"][:15], (row["ROA"], row["ROE"]), fontsize=7)
-    ax2.set_xlabel("ROA")
-    ax2.set_ylabel("ROE")
-    ax2.legend()
-    st.pyplot(fig2)
+    with tab1:
+        df_corr = df[df["LDR"] < 10].copy()
+        df_corr = df_corr[df_corr["ROE"] < 10]
+        corr = df_corr[["ROA", "ROE", "LDR", "EAR", "assets", "net_income"]].corr()
+        fig, ax = plt.subplots(figsize=(8, 6))
+        sns.heatmap(corr, annot=True, fmt=".2f", cmap="coolwarm", center=0, ax=ax)
+        st.pyplot(fig)
+
+    with tab2:
+        year = st.selectbox("Year", sorted(df["year"].unique(), reverse=True))
+        df_c = df[df["year"] == year][["bank_name", "ROA", "ROE", "LDR", "EAR"]].dropna()
+        df_c = df_c[df_c["ROE"] < 100]
+        df_c = df_c[df_c["LDR"] < 100]
+        from sklearn.preprocessing import StandardScaler
+        from sklearn.cluster import KMeans
+        scaler = StandardScaler()
+        X = scaler.fit_transform(df_c[["ROA", "ROE", "LDR", "EAR"]])
+        df_c["segment"] = KMeans(n_clusters=3, random_state=42).fit_predict(X)
+        df_c["segment"] = df_c["segment"].map({0: "Stable", 1: "Aggressive", 2: "Risky"})
+        fig2, ax2 = plt.subplots(figsize=(10, 6))
+        colors = {"Stable": "#4CAF50", "Aggressive": "#2196F3", "Risky": "#f44336"}
+        for seg, group in df_c.groupby("segment"):
+            ax2.scatter(group["ROA"], group["ROE"], label=seg, color=colors[seg], s=100)
+            for _, row in group.iterrows():
+                ax2.annotate(row["bank_name"][:15], (row["ROA"], row["ROE"]), fontsize=7)
+        ax2.set_xlabel("ROA")
+        ax2.set_ylabel("ROE")
+        ax2.legend()
+        st.pyplot(fig2)
+
+    with tab3:
+        import numpy as np
+        from sklearn.preprocessing import MinMaxScaler
+
+        def score_with_weights(data, w):
+            d = data[data["LDR"] < 10].copy()
+            sc = MinMaxScaler()
+            d["ROA_n"] = sc.fit_transform(d[["ROA"]])
+            d["ROE_n"] = sc.fit_transform(d[["ROE"]])
+            d["EAR_n"] = sc.fit_transform(d[["EAR"]])
+            d["LDR_s"] = 1 - abs(d["LDR"] - 1) / d["LDR"].max()
+            d["score"] = d["ROA_n"]*w[0] + d["ROE_n"]*w[1] + d["LDR_s"]*w[2] + d["EAR_n"]*w[3]
+            return d.groupby("bank_name")["score"].mean()
+
+        np.random.seed(42)
+        results = []
+        for _ in range(500):
+            w = np.random.dirichlet([1, 1, 1, 1])
+            results.append(score_with_weights(df, w))
+
+        mc = pd.DataFrame(results)
+        mean_score = mc.mean().sort_values(ascending=False)
+        std_score = mc.std().sort_values(ascending=False)
+
+        fig3, axes = plt.subplots(1, 2, figsize=(14, 6))
+        mean_score.head(10).plot(kind="barh", ax=axes[0], color="#2196F3")
+        axes[0].set_title("Top 10 by avg score")
+        axes[0].invert_yaxis()
+        std_score.head(10).plot(kind="barh", ax=axes[1], color="#f44336")
+        axes[1].set_title("Most volatile rankings")
+        axes[1].invert_yaxis()
+        plt.tight_layout()
+        st.pyplot(fig3)
+
+    with tab4:
+        from scipy import stats
+        df_out = df[df["ROA"] < 0.5].copy()
+        df_out["ROA_z"] = stats.zscore(df_out["ROA"])
+        df_out["assets_z"] = stats.zscore(df_out["assets"])
+        outliers = df_out[(df_out["ROA_z"].abs() > 2) | (df_out["assets_z"].abs() > 2)]
+        fig4, ax4 = plt.subplots(figsize=(10, 6))
+        ax4.scatter(df_out["ROA"], df_out["assets"]/1e9, alpha=0.5, label="normal")
+        ax4.scatter(outliers["ROA"], outliers["assets"]/1e9, color="red", s=100, label="outlier")
+        for _, row in outliers.iterrows():
+            ax4.annotate(row["bank_name"][:15], (row["ROA"], row["assets"]/1e9), fontsize=7)
+        ax4.set_xlabel("ROA")
+        ax4.set_ylabel("Assets (B KZT)")
+        ax4.legend()
+        st.pyplot(fig4)
+
+    with tab5:
+        from sklearn.linear_model import LinearRegression
+        search_terms = ["Halyk", "Kaspi", "CenterCredit"]
+        fig5, axes = plt.subplots(1, 3, figsize=(15, 5))
+        for i, term in enumerate(search_terms):
+            d = df[df["bank_name"].str.contains(term)].sort_values("year")
+            X = d["year"].values.reshape(-1, 1)
+            y = d["assets"].values
+            model = LinearRegression()
+            model.fit(X, y)
+            forecast = model.predict(np.array([2027, 2028]).reshape(-1, 1))
+            axes[i].plot(d["year"], d["assets"]/1e9, marker="o", label="actual")
+            axes[i].plot([2027, 2028], forecast/1e9, marker="o", linestyle="--", color="red", label="forecast")
+            axes[i].set_title(term)
+            axes[i].set_ylabel("Assets (B KZT)")
+            axes[i].legend(fontsize=8)
+        plt.suptitle("Asset Growth Forecast")
+        plt.tight_layout()
+        st.pyplot(fig5)
