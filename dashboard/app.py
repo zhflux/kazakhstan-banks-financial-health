@@ -323,5 +323,3 @@ elif page == "Data Quality":
             st.success(f"{check}: ✅ all {count} rows pass")
         else:
             st.error(f"{check}: ❌ only {count}/{len(df)} rows pass")
-
-
